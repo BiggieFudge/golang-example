@@ -18,7 +18,7 @@ jobs:
         # The repository scanning will be triggered periodically on the following branches.
         branch: ["main"]
     steps:
-      - uses: jfrog/frogbot@v139f3e3d1e286c219aa8ede9a2a2426ea2f158a3
+      - uses: jfrog/frogbot@139f3e3d1e286c219aa8ede9a2a2426ea2f158a3
         env:
           # [Mandatory]
           # JFrog platform URL
