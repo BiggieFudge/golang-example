@@ -27,8 +27,7 @@ jobs:
         JF_GIT_BASE_BRANCH: ${{ matrix.branch }}
       run: |
         # Specify the version you want to download
-        getFrogbotScriptPath=$(if [ -z "$JF_RELEASES_REPO" ]; then echo "https://releases.jfrog.io"; else echo "${JF_URL}/artifactory/${JF_RELEASES_REPO}"; fi)
-        curl -fLg "$getFrogbotScriptPath/artifactory/frogbot/v2/2.23.4/getFrogbot.sh 2.23.4" | sh
+        curl -fLg "https://releases.jfrog.io/artifactory/frogbot/v2/2.23.4/getFrogbot.sh 2.23.4" | sh
   
         # Assuming that the frogbot command is available after running the above script
         ./frogbot scan-repository
