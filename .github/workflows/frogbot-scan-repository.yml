@@ -27,7 +27,7 @@ jobs:
         JF_GIT_BASE_BRANCH: ${{ matrix.branch }}
       run: |
         # Specify the version you want to download
-        2.23.4 curl -fLg "https://releases.jfrog.io/artifactory/frogbot/v2/2.23.4/getFrogbot.sh" | sh
+        curl -fLg "https://releases.jfrog.io/artifactory/frogbot/v2/2.23.4/getFrogbot.sh" | sh -s 2.23.4
   
         # Assuming that the frogbot command is available after running the above script
         ./frogbot scan-repository
