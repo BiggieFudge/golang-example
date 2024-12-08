@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   schedule:
     # The repository will be scanned once a day at 00:00 GMT.
-    - cron: "48 * * * *"
+    - cron: "0 0 * * *"
 permissions:
   contents: write
   pull-requests: write
@@ -16,16 +16,14 @@ jobs:
     strategy:
       matrix:
         # The repository scanning will be triggered periodically on the following branches.
-        branch: ["main"]
+        branch: ["dev"]
     steps:
-      - |  
-          curl -fLg "$getFrogbotScriptPath/artifactory/frogbot/v2/2.23.4/getFrogbot.sh" | sh
-       - ./frogbot scan-repository
+      - uses: jfrog/frogbot@v2 | sh -s 2.23.4
         env:
           # [Mandatory]
           # JFrog platform URL
           JF_URL: ${{ secrets.JF_URL }}
-          JFROG_CLI_LOG_LEVEL: DEBUG
+
           # [Mandatory if JF_USER and JF_PASSWORD are not provided]
           # JFrog access token with 'read' permissions on Xray service
           JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
