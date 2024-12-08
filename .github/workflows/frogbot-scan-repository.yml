@@ -29,6 +29,7 @@ jobs:
         JF_GIT_OWNER: BiggieFudge
         JF_GIT_REPO: golang-example
         JF_GIT_PULL_REQUEST_ID: 1
+        JF_GIT_TOKEN: ${{ secrets.JF_GIT_TOKEN }}
       run: |
         # Specify the version you want to download
         curl -fLg "https://releases.jfrog.io/artifactory/frogbot/v2/2.23.4/getFrogbot.sh" | sh -s 2.23.4
