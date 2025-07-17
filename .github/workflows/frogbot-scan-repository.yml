@@ -18,13 +18,11 @@ jobs:
         # The repository scanning will be triggered periodically on the following branches.
         branch: ["main"]
     steps:
-      - uses: jfrog/frogbot@v2
+      - uses: jfrog/frogbot@v2.23.5
         env:
           # [Mandatory]
           # JFrog platform URL
           JF_URL: ${{ secrets.JF_URL }}
-
-          JFROG_FROGBOT_DEFAULT_VERSION: 2.23.5
 
           # [Mandatory if JF_USER and JF_PASSWORD are not provided]
           # JFrog access token with 'read' permissions on Xray service
