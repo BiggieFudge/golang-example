@@ -22,11 +22,13 @@ jobs:
         env:
           # [Mandatory]
           # JFrog platform URL
-          JF_URL: ${{ secrets.JF_URL_SH }}
+          JF_URL: ${{ secrets.JF_URL }}
+
+          JFROG_FROGBOT_DEFAULT_VERSION: 2.23.5
 
           # [Mandatory if JF_USER and JF_PASSWORD are not provided]
           # JFrog access token with 'read' permissions on Xray service
-          JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN_SH }}
+          JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
 
           # [Mandatory if JF_ACCESS_TOKEN is not provided]
           # JFrog username with 'read' permissions for Xray. Must be provided with JF_PASSWORD
