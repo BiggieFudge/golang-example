@@ -1,0 +1,3 @@
+PyYAML>3.11
+nltk
+redis == 4.6.0
