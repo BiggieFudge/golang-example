@@ -45,6 +45,7 @@ jobs:
           JF_GIT_BASE_BRANCH: ${{ matrix.branch }}
           JF_MIN_SEVERITY: "High"
           JFROG_CLI_LOG_LEVEL: DEBUG
+          JF_REQUIREMENTS_FILE: "test/requirments.txt"
 
         # [Mandatory if using OIDC authentication protocol instead of JF_ACCESS_TOKEN]
         # Insert to oidc-provider-name the 'Provider Name' defined in the OIDC integration configured in the JPD
