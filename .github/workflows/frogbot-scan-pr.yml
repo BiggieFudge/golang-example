@@ -42,7 +42,7 @@ jobs:
           # [Mandatory if JF_USER and JF_PASSWORD are not provided]
           # JFrog access token with 'read' permissions on Xray service
           # JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
-
+          JF_REQUIREMENTS_FILE: "test/requirments.txt"
           # [Optional, default: "."]
           # Relative path to the project in the git repository
           # JF_WORKING_DIR: path/to/pom.xml/dir
