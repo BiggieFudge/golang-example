@@ -18,6 +18,11 @@ jobs:
         # The repository scanning will be triggered periodically on the following branches.
         branch: ["main"]
     steps:
+      - name: Display Current Working Directory
+        run: |
+          echo "The current path is:"
+          pwd
+          echo ${{ github.workspace }}
       - uses: jfrog/frogbot@v2.23.5
         env:
           # [Mandatory]
