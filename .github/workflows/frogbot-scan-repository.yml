@@ -23,6 +23,8 @@ jobs:
           echo "The current path is:"
           pwd
           echo ${{ github.workspace }}
+          echo "***requirements file content:***"
+          cat ./test/requirements.txt
       - uses: jfrog/frogbot@v2.23.5
         env:
           # [Mandatory]
