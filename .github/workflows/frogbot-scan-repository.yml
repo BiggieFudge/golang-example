@@ -23,6 +23,7 @@ jobs:
           echo "The current path is:"
           pwd
           echo ${{ github.workspace }}
+          pip install -r "./test/requirements.txt"
       - uses: jfrog/frogbot@v2.23.5
         env:
           # [Mandatory]
