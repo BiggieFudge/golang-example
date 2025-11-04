@@ -18,13 +18,6 @@ jobs:
         # The repository scanning will be triggered periodically on the following branches.
         branch: ["main"]
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-      - name: Cat relative path
-        run: |
-          echo "***requirements file content:***"
-          cat test/requirements.txt
-          pip --version
       - name: Display Current Working Directory
         run: |
           echo "The current path is:"
@@ -57,7 +50,7 @@ jobs:
           JF_GIT_BASE_BRANCH: ${{ matrix.branch }}
           JF_MIN_SEVERITY: "High"
           JFROG_CLI_LOG_LEVEL: DEBUG
-          JF_REQUIREMENTS_FILE: "test/requirements.txt"
+          JF_REQUIREMENTS_FILE: "./test/requirements.txt"
 
         # [Mandatory if using OIDC authentication protocol instead of JF_ACCESS_TOKEN]
         # Insert to oidc-provider-name the 'Provider Name' defined in the OIDC integration configured in the JPD
