@@ -24,6 +24,7 @@ jobs:
         run: |
           echo "***requirements file content:***"
           cat test/requirements.txt
+          pip --version
       - name: Display Current Working Directory
         run: |
           echo "The current path is:"
