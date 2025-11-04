@@ -18,13 +18,17 @@ jobs:
         # The repository scanning will be triggered periodically on the following branches.
         branch: ["main"]
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Cat relative path
+        run: |
+          echo "***requirements file content:***"
+          cat test/requirements.txt
       - name: Display Current Working Directory
         run: |
           echo "The current path is:"
           pwd
           echo ${{ github.workspace }}
-          echo "***requirements file content:***"
-          cat test/requirements.txt
       - uses: jfrog/frogbot@v2.23.5
         env:
           # [Mandatory]
